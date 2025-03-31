@@ -1,14 +1,26 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface RestaurantCardProps {
   name: string;
   description: string;
   image: string;
+  path: string;
 }
 
-const RestaurantCard = ({ name, description, image }: RestaurantCardProps) => {
+const RestaurantCard = ({ name, description, image, path }: RestaurantCardProps) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   return (
-    <div className="group relative overflow-hidden">
+    <div 
+      className="group relative overflow-hidden cursor-pointer"
+      onClick={handleClick}
+    >
       <div 
         className="h-[600px] bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
         style={{ backgroundImage: `url(${image})` }}

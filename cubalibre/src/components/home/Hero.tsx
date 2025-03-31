@@ -16,7 +16,12 @@ const Hero = () => {
       <div className="relative h-full flex items-center justify-center text-center">
         <div className="text-white">
           <h1 className="text-6xl md:text-8xl font-serif mb-6">Welcome to Cuba Libre</h1>
-          <p className="text-xl md:text-2xl uppercase tracking-[0.2em]">Culinary Excellence Since 2003</p>
+          <p className="text-xl md:text-2xl uppercase tracking-[0.2em]"></p>
+          <button 
+            className="mt-9 px-12 py-6 text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300 transform hover:scale-105 focus:outline-none"
+          >
+            Reserve
+          </button>
         </div>
       </div>
     </div>
