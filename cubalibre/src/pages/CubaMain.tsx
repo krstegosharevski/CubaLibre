@@ -3,8 +3,9 @@ import Navbar from '../components/layout/Navbar';
 import { MapPin, Clock, Phone, Music } from 'lucide-react';
 import { motion, useAnimation, useScroll } from 'framer-motion';
 import { useInView } from 'framer-motion';
+import RestaurantsListing from '../components/shared/RestaurantsListing';
 
-const Tradition = () => {
+const CubaMain = () => {
   const { scrollY } = useScroll();
 
   useEffect(() => {
@@ -15,10 +16,10 @@ const Tradition = () => {
   }, [scrollY]);
 
   return (
-    <div className="w-full min-h-screen bg-black">
+    <div className="w-full min-h-screen overflow-hidden bg-black">
       {/* Hero Section */}
       <div className="relative h-screen">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80")',
@@ -27,14 +28,14 @@ const Tradition = () => {
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
         <Navbar />
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="relative h-full flex items-center justify-center text-center px-4"
         >
           <div className="text-white max-w-4xl">
-            <h1 className="text-5xl md:text-7xl font-serif mb-6">Cuba Libre</h1>
+            <h1 className="text-5xl md:text-7xl font-serif mb-6">Cuba Libre Beach & Bar</h1>
             <button className="px-8 py-7 mt-3 text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300">
               Make a Reservation
             </button>
@@ -43,7 +44,7 @@ const Tradition = () => {
       </div>
 
       {/* Info Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
@@ -57,8 +58,8 @@ const Tradition = () => {
             <div className="text-white">
               <h2 className="text-4xl font-serif mb-8">About Cuba Libre</h2>
               <p className="text-lg leading-relaxed opacity-90 mb-8">
-                Tradition Restaurant celebrates the rich culinary heritage of our region while 
-                embracing modern cooking techniques. Our menu features carefully selected local 
+                Tradition Restaurant celebrates the rich culinary heritage of our region while
+                embracing modern cooking techniques. Our menu features carefully selected local
                 ingredients prepared with respect for traditional recipes and innovative twists.
               </p>
               <div className="space-y-6">
@@ -68,7 +69,11 @@ const Tradition = () => {
                 </div>
                 <div className="flex items-center space-x-4">
                   <Clock className="w-6 h-6" />
-                  <span>Mon-Sun: 09:00 - 01:00</span>
+                  <span>Mon-Thu & Sun: 09:00 - 01:00</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Clock className="w-6 h-6" />
+                  <span>Fri-Sat: 09:00 - 02:00</span>
                 </div>
                 <div className="flex items-center space-x-4">
                   <Phone className="w-6 h-6" />
@@ -77,7 +82,7 @@ const Tradition = () => {
               </div>
             </div>
             {/* Right Column */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 50 }}
@@ -85,7 +90,7 @@ const Tradition = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="h-[400px] md:h-full relative"
             >
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"
                 alt="Restaurant interior"
                 className="w-full h-full object-cover"
@@ -96,7 +101,7 @@ const Tradition = () => {
       </motion.div>
 
       {/* Music Events Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
@@ -107,12 +112,12 @@ const Tradition = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Music className="w-12 h-12 mx-auto mb-6 text-gold-300" />
-            <h2 className="text-4xl font-serif mb-4">Live Famous Music & Events</h2>
+            <h2 className="text-4xl font-serif mb-4">Famous Live Music & Events</h2>
             <p className="text-lg text-gray-600">Experience the perfect blend of culinary excellence and musical artistry</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
@@ -125,7 +130,7 @@ const Tradition = () => {
               <p className="text-gray-500">Enjoy authentic Latin music, exotic cocktails, and performances by Cuban dancers that will ignite the atmosphere.</p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
@@ -138,7 +143,7 @@ const Tradition = () => {
               <p className="text-gray-500">Enjoy live music every Friday and Saturday! 🎶 Relax with good company, atmosphere and unforgettable sounds!.</p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
@@ -156,7 +161,7 @@ const Tradition = () => {
 
       {/* Menu Preview */}
       <div className="relative w-full min-h-screen flex items-center">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: 'url("https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2369&q=80")',
@@ -164,8 +169,8 @@ const Tradition = () => {
         >
           <div className="absolute inset-0 bg-black bg-opacity-60"></div>
         </div>
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
@@ -177,13 +182,13 @@ const Tradition = () => {
             <h2 className="text-2xl md:text-3xl font-serif mb-4">WHAT'S YOUR FLAVOUR?</h2>
             <h3 className="text-4xl md:text-6xl font-serif mb-8">MENU</h3>
             <p className="text-lg md:text-xl mb-12 leading-relaxed">
-              Fancy the best meat from the Broiler grill, fresh fish, lobster, oysters and delicious sushi? 
-              Then Tradition Restaurant is the place for you. Combine the most delicious dishes with our 
+              Fancy the best meat from the grill, fresh fish, lobster, oysters and delicious sushi?
+              Then Cuba Libre Restaurant is the place for you. Combine the most delicious dishes with our
               beautiful wines and homemade cocktails.
             </p>
-            
+
             <div className="space-y-8">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
@@ -193,8 +198,8 @@ const Tradition = () => {
                 <h4 className="text-2xl font-serif mb-2">GRILLED TUNA</h4>
                 <p className="text-gray-300">Zucchini | Tay Soi Vinaigrette</p>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
@@ -204,8 +209,8 @@ const Tradition = () => {
                 <h4 className="text-2xl font-serif mb-2">JAPANESE WAGYU ENTRECÔTE A5</h4>
                 <p className="text-gray-300">Japanese Wagyu Entrecôte per 100 Gr.</p>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
@@ -215,8 +220,8 @@ const Tradition = () => {
                 <h4 className="text-2xl font-serif mb-2">SMASHED AVOCADO DIP</h4>
                 <p className="text-gray-300">Pico De Gallo | Avocado | Flatbread</p>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
@@ -227,15 +232,75 @@ const Tradition = () => {
                 <p className="text-gray-300">Salmon | Avocado | Teriyaki</p>
               </motion.div>
             </div>
-            
+
             <button className="mt-12 px-8 py-4 text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300">
               VIEW THE MENU
             </button>
           </div>
         </motion.div>
       </div>
+
+      {/* Opening Hours & Location Section */}
+      <div className="w-full bg-black py-16 px-4">
+        <div className="max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-xl">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {/* Opening Hours */}
+            <div className="p-10">
+              <h2 className="text-3xl font-serif mb-8 text-black italic">Opening Hours</h2>
+              <div className="space-y-4 text-black mt-3">
+                {[
+                  { day: "Monday", hours: "09:00 - 01:00" },
+                  { day: "Tuesday", hours: "09:00 - 01:00" },
+                  { day: "Wednesday", hours: "09:00 - 01:00" },
+                  { day: "Thursday", hours: "09:00 - 01:00" },
+                  { day: "Friday", hours: "09:00 - 02:00" },
+                  { day: "Saturday", hours: "09:00 - 02:00" },
+                  { day: "Sunday", hours: "09:00 - 01:00" }
+                ].map((item, index) => (
+                  <div key={index} className="flex justify-between border-b border-gray-200 pb-3">
+                    <span className="font-medium italic">{item.day}</span>
+                    <span className="italic">{item.hours}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Google Map with Skew Effect */}
+            <motion.div
+              className="h-full w-full bg-white p-10 relative"
+              initial={{ skewX: -6 }}
+              whileInView={{ skewX: 0 }}
+              viewport={{ once: false }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 20
+              }}
+            >
+              <div className="h-full w-full border-4 border-white rounded-lg overflow-hidden relative">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.359046069581!2d20.8032905!3d41.1009742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350dcaa42cfea41%3A0x3769611e40472486!2sCuba%20Libre%20Beach%20%26%20Bar!5e0!3m2!1sen!2smk!4v1710000000000!5m2!1sen!2smk"
+                  width="100%"
+                  height="100%"
+                  style={{ minHeight: '400px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  className="bg-white opacity-90"
+                />
+                <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none"></div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+
+      <RestaurantsListing
+        title="Explore Our Other Restaurants"
+        excludeCurrent
+      />
     </div>
   );
 };
 
-export default Tradition;
+export default CubaMain;

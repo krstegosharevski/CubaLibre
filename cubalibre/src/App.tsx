@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home'
-import Tradition from './pages/Cuba';
+import CubaMain from './pages/CubaMain';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
     <div className="w-full min-h-screen">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/tradition" element={<Tradition />} />
+        <Route path="/cubamain" element={<CubaMain />} />
       </Routes>
     </div>
   </Router>

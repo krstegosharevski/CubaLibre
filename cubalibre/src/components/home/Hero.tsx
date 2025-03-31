@@ -2,6 +2,13 @@ import React from 'react';
 import Navbar from '../layout/Navbar';
 
 const Hero = () => {
+  const scrollToRestaurants = () => {
+    const element = document.getElementById('restaurants-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="relative h-screen">
       <div 
@@ -18,6 +25,7 @@ const Hero = () => {
           <h1 className="text-6xl md:text-8xl font-serif mb-6">Welcome to Cuba Libre</h1>
           <p className="text-xl md:text-2xl uppercase tracking-[0.2em]"></p>
           <button 
+           onClick={scrollToRestaurants}
             className="mt-9 px-12 py-6 text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300 transform hover:scale-105 focus:outline-none"
           >
             Reserve
