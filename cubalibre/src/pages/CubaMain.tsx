@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/layout/Navbar';
-import { MapPin, Clock, Phone, Music } from 'lucide-react';
+import { ChevronDown, MapPin, Clock, Phone, Music } from 'lucide-react';
 import { motion, useAnimation, useScroll } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import RestaurantsListing from '../components/shared/RestaurantsListing';
@@ -41,6 +41,9 @@ const CubaMain = () => {
             </button>
           </div>
         </motion.div>
+        <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+          <ChevronDown size={32} />
+        </div>
       </div>
 
       {/* Info Section */}
@@ -295,10 +298,14 @@ const CubaMain = () => {
       </div>
 
 
-      <RestaurantsListing
-        title="Explore Our Other Restaurants"
-        excludeCurrent
-      />
+      <div className="bg-black py-8 px-4">
+        <div className="max-w-6xl mx-auto">
+          <RestaurantsListing
+            title="Explore Our Other Locations"
+            excludeCurrent
+          />
+        </div>
+      </div>
     </div>
   );
 };

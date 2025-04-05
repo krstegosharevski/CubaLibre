@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import RestaurantCard from '../home/ResturantCard';
 
@@ -10,7 +12,7 @@ interface Restaurant {
 
 interface RestaurantsListingProps {
   title?: string;
-  subtitle?:string,
+  subtitle?: string;
   excludeCurrent?: boolean;
   currentPath?: string;
   id?: string;
@@ -41,7 +43,7 @@ const RestaurantsListing: React.FC<RestaurantsListingProps> = ({
   title = "Where are you going?", 
   subtitle = "ALL LOCATIONS",
   excludeCurrent = true,
-  currentPath ,
+  currentPath,
   id
 }) => {
   const filteredRestaurants = excludeCurrent 
@@ -49,11 +51,11 @@ const RestaurantsListing: React.FC<RestaurantsListingProps> = ({
     : restaurants;
 
   return (
-    <div id={id} className="w-full px-4 lg:px-0 py-24">
-      <h4 className="text-2xl font-serif text-center text-white mb-5 shadow-lg">{title}</h4>
-      <h1 className="text-5xl font-serif text-center text-white mb-16 shadow-lg">{subtitle}</h1>
-      <div className='mx-4 px-4'>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+    <div id={id} className="w-full px-4 lg:px-0 py-16">
+      <h4 className="text-2xl font-serif text-center text-white mb-4 shadow-lg">{title}</h4>
+      <h1 className="text-4xl font-serif text-center text-white mb-12 shadow-lg">{subtitle}</h1>
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {filteredRestaurants.map((restaurant, index) => (
             <RestaurantCard
               key={index}
