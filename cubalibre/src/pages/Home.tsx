@@ -1,9 +1,9 @@
-import React from 'react';
 import Hero from '../components/home/Hero';
-import RestaurantCard from '../components/home/ResturantCard';
 import About from '../components/home/About';
 import RestaurantsListing from '../components/shared/RestaurantsListing';
 import Footer from '../components/layout/Footer';
+import ResturantInfo from '../components/home/ResturantInfo';
+
 
 const Home = () => {
   return (
@@ -11,6 +11,7 @@ const Home = () => {
       <Hero />
       <RestaurantsListing id="restaurants-section" />
       <About />
+      <ResturantInfo/>
       <Footer/>
     </div>
   );

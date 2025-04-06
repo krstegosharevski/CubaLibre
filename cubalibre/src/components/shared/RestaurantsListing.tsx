@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import RestaurantCard from '../home/ResturantCard';
 

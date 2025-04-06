@@ -1,9 +1,7 @@
-import React from 'react';
 import Navbar from '../components/layout/Navbar';
-import { ChevronDown, MapPin, Clock, Phone } from 'lucide-react';
+import { ChevronDown, Clock } from 'lucide-react';
 import { motion, useScroll } from 'framer-motion';
 import RestaurantsListing from '../components/shared/RestaurantsListing';
-import Footer from '../components/layout/Footer';
 
 const Harbour = () => {
     const { scrollY } = useScroll();
@@ -247,38 +245,61 @@ const Harbour = () => {
                 </div>
             </motion.div>
 
-            {/* Contact & Info Section */}
-            <div className="w-full py-24 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-                        <div>
-                            <h2 className="text-3xl font-serif mb-8 text-gray-900">Visit Us</h2>
-                            <div className="space-y-6 text-gray-600">
-                                <div className="flex items-center space-x-4">
-                                    <MapPin className="w-6 h-6" />
-                                    <span>Kej Makedonija, Ohrid 6000</span>
-                                </div>
-                                <div className="flex items-center space-x-4">
-                                    <Clock className="w-6 h-6" />
-                                    <span>Mon-Sun: 18:00 - 02:00</span>
-                                </div>
-                                <div className="flex items-center space-x-4">
-                                    <Phone className="w-6 h-6" />
-                                    <span>+389 75 357 545</span>
-                                </div>
+            {/* Black Divider */}
+            <hr></hr>
+
+            {/* Opening Hours & Location Section */}
+            <div className="w-full bg-white py-16 px-4">
+                <div className="container mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Opening Hours */}
+                        <div className="p-10 bg-white shadow-lg rounded-lg">
+                            <div className="flex items-center mb-8">
+                                <Clock className="w-6 h-6 mr-3" />
+                                <h2 className="text-3xl font-serif text-black">Opening Hours</h2>
+                            </div>
+                            <div className="space-y-4 text-black mt-3">
+                                {[
+                                    { day: "Monday", hours: "09:00 - 01:00" },
+                                    { day: "Tuesday", hours: "09:00 - 01:00" },
+                                    { day: "Wednesday", hours: "09:00 - 01:00" },
+                                    { day: "Thursday", hours: "09:00 - 01:00" },
+                                    { day: "Friday", hours: "09:00 - 02:00" },
+                                    { day: "Saturday", hours: "09:00 - 02:00" },
+                                    { day: "Sunday", hours: "09:00 - 01:00" }
+                                ].map((item, index) => (
+                                    <div key={index} className="flex justify-between border-b border-gray-200 pb-3">
+                                        <span className="font-medium italic">{item.day}</span>
+                                        <span className="italic">{item.hours}</span>
+                                    </div>
+                                ))}
                             </div>
                         </div>
 
-                        <div>
-                            <h2 className="text-3xl font-serif mb-8 text-gray-900">Reservations</h2>
-                            <p className="text-gray-600 mb-8">
-                                For group bookings and special events, please contact us directly.
-                                We recommend making reservations in advance to ensure availability.
-                            </p>
-                            <button className="px-8 py-4 bg-black text-white hover:bg-gray-800 transition duration-300">
-                                Book a Table
-                            </button>
-                        </div>
+                        {/* Google Map with Skew Effect */}
+                        <motion.div
+                            className="bg-white shadow-lg rounded-lg p-10 relative"
+                            initial={{ skewX: -6 }}
+                            whileInView={{ skewX: 0 }}
+                            viewport={{ once: false }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 100,
+                                damping: 20
+                            }}
+                        >
+                            <div className="h-full w-full rounded-lg overflow-hidden relative" style={{ minHeight: '400px' }}>
+                                <iframe
+                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.756643179906!2d20.7976297!3d41.1126301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350ddb4a185b5df%3A0xf49ec62cb6aed35c!2sThe%20HarbouR%20Club!5e0!3m2!1sen!2smk!4v1712419564639!5m2!1sen!2smk" 
+                                    width="100%"
+                                    height="100%"
+                                    style={{ minHeight: '400px' }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    className="bg-white"
+                                />
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>

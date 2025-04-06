@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import Navbar from '../components/layout/Navbar';
 import { ChevronDown, MapPin, Clock, Phone, Music } from 'lucide-react';
-import { motion, useAnimation, useScroll } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import RestaurantsListing from '../components/shared/RestaurantsListing';
 
 const CubaMain = () => {
@@ -249,7 +248,10 @@ const CubaMain = () => {
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* Opening Hours */}
             <div className="p-10">
-              <h2 className="text-3xl font-serif mb-8 text-black italic">Opening Hours</h2>
+              <div className="flex items-center mb-8">
+                <Clock className="w-6 h-6 mr-3" />
+                <h2 className="text-3xl font-serif text-black">Opening Hours</h2>
+              </div>
               <div className="space-y-4 text-black mt-3">
                 {[
                   { day: "Monday", hours: "09:00 - 01:00" },

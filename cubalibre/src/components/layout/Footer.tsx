@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { Instagram, Facebook } from 'lucide-react';
 
 const Footer = () => {
