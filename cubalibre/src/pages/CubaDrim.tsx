@@ -35,7 +35,7 @@ const CubaDrim = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-black">
+    <div className="w-full min-h-screen bg-black overflow-hidden">
       {/* Hero Section */}
       <div className="relative h-screen">
         <div
@@ -55,7 +55,8 @@ const CubaDrim = () => {
         >
           <div className="text-white max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-serif mb-6">Cuba Libre Drim</h1>
-            <button className="px-8 py-7 mt-3 text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300">
+            <p className="text-xl md:text-2xl mb-8 font-light">Where Lake Ohrid's Beauty Meets Culinary Excellence</p>
+            <button className="px-8 py-7 mt-3 rounded-md text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300">
               Make a Reservation
             </button>
           </div>
@@ -74,13 +75,13 @@ const CubaDrim = () => {
         className="relative py-24 overflow-hidden"
       >
         <div className="max-w-7xl mx-auto px-4">
-          <motion.div 
+          <motion.div
             variants={fadeInUp}
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-serif mb-6 text-white">Welcome to Cuba Libre Drim</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Nestled on the shores of Lake Ohrid, Cuba Libre Drim offers an unparalleled 
+              Nestled on the shores of Lake Ohrid, Cuba Libre Drim offers an unparalleled
               dining experience combining breathtaking views with exquisite cuisine.
             </p>
           </motion.div>
@@ -123,7 +124,7 @@ const CubaDrim = () => {
       </motion.div>
 
       {/* Menu Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: false }}
@@ -131,7 +132,7 @@ const CubaDrim = () => {
         className="bg-black py-24 px-4"
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
@@ -235,7 +236,7 @@ const CubaDrim = () => {
             </motion.div>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
@@ -249,10 +250,54 @@ const CubaDrim = () => {
         </div>
       </motion.div>
 
+      {/* Image + Text Animated Card Section - UPDATED */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.8 }}
+        className="relative py-32 bg-black"
+      >
+        <div className="max-w-6xl mx-auto px-4 overflow-hidden">
+          <div className="relative">
+            {/* Image Container - Updated size and positioning */}
+            <div className="relative h-[500px] w-[700px] md-right[100%] rounded-2xl overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1920&q=80"
+                alt="Special ambience"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+            </div>
+
+            {/* Text Container - Updated positioning */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8 }}
+              className="absolute md:right-[10%] top-[10%] md:top-[15%] left-[10%] md:left-auto transform -translate-x-1/2 md:translate-x-0 -translate-y-1/2"
+            >
+              <div className="bg-white/90 backdrop-blur-md p-8 md:p-10 rounded-xl shadow-2xl max-w-md">
+                <h2 className="text-3xl md:text-4xl font-serif mb-4">Why Visit Cuba Libre Drim Restaurant?</h2>
+                <p className="text-lg font-serif">
+                  It is the perfect spot to enjoy a meal while being close to some of the most beautiful and culturally significant sites in the area.
+                </p>
+                <p className="text-lg font-serif">- Visit the Monastery of Saint Naum</p>
+                <p className="text-lg font-serif">- Explore the Springs of the River Crn Drim</p>
+                <button className="mt-6 px-8 py-3 bg-black text-white hover:bg-gray-800 transition duration-300 rounded-md">
+                  Reserve
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.div>
+
       {/* Image Gallery Section */}
       <div className="py-24 px-4 bg-black">
         <div className="max-w-7xl mx-auto">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
@@ -266,7 +311,7 @@ const CubaDrim = () => {
               transition={{ duration: 0.6 }}
               className="aspect-square relative overflow-hidden group"
             >
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
                 alt="Dining experience"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -279,7 +324,7 @@ const CubaDrim = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="aspect-square relative overflow-hidden group"
             >
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1539136788836-5699e78bfc75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
                 alt="Interior"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -292,7 +337,7 @@ const CubaDrim = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="aspect-square relative overflow-hidden group"
             >
-              <img 
+              <img
                 src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80"
                 alt="Food presentation"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -302,64 +347,68 @@ const CubaDrim = () => {
         </div>
       </div>
 
-      {/* Contact Section */}
-      <div className="bg-black py-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-16"
-          >
-            <div>
-              <h2 className="text-3xl font-serif mb-8 text-white">Location & Hours</h2>
-              <div className="space-y-6 text-gray-300">
-                <div className="flex items-center space-x-4">
-                  <MapPin className="w-6 h-6" />
-                  <span>Gradishte, Ohrid 6000</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <Clock className="w-6 h-6" />
-                  <span>Daily: 12:00 - 23:00</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <Phone className="w-6 h-6" />
-                  <span>+389 75 357 545</span>
-                </div>
+      <div className="w-full bg-black py-16 px-4">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Opening Hours */}
+            <div className="p-10 bg-black shadow-lg rounded-lg">
+              <div className="flex items-center mb-8">
+                <Clock className="w-8 h-8 mr-3 text-white" />
+                <h2 className="text-3xl font-serif text-white shadow-lg">Opening Hours</h2>
               </div>
-              <button className="mt-8 px-8 py-4 bg-white text-black hover:bg-gray-200 transition duration-300">
-                Get Directions
-              </button>
+              <div className="space-y-4 text-white mt-3">
+                {[
+                  { day: "Monday", hours: "09:00 - 01:00" },
+                  { day: "Tuesday", hours: "09:00 - 01:00" },
+                  { day: "Wednesday", hours: "09:00 - 01:00" },
+                  { day: "Thursday", hours: "09:00 - 01:00" },
+                  { day: "Friday", hours: "09:00 - 02:00" },
+                  { day: "Saturday", hours: "09:00 - 02:00" },
+                  { day: "Sunday", hours: "09:00 - 01:00" }
+                ].map((item, index) => (
+                  <div key={index} className="flex justify-between border-b border-gray-700 pb-3">
+                    <span className="font-medium italic">{item.day}</span>
+                    <span className="italic">{item.hours}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
+            {/* Google Map with Skew Effect */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              className="bg-black shadow-lg rounded-lg p-10 relative"
+              initial={{ skewX: -6 }}
+              whileInView={{ skewX: 0 }}
               viewport={{ once: false }}
-              transition={{ duration: 0.6 }}
-              className="h-[400px] relative rounded-lg overflow-hidden"
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 20
+              }}
             >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.359046069581!2d20.8032905!3d41.1009742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350dcaa42cfea41%3A0x3769611e40472486!2sCuba%20Libre%20Beach%20%26%20Bar!5e0!3m2!1sen!2smk!4v1710000000000!5m2!1sen!2smk"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                className="grayscale"
-              />
+              <div className="h-full w-full rounded-lg overflow-hidden relative" style={{ minHeight: '400px' }}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.756643179906!2d20.7976297!3d41.1126301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350ddb4a185b5df%3A0xf49ec62cb6aed35c!2sThe%20HarbouR%20Club!5e0!3m2!1sen!2smk!4v1712419564639!5m2!1sen!2smk"
+                  width="100%"
+                  height="100%"
+                  style={{ minHeight: '400px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  className="bg-white"
+                />
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </div>
 
+
+
       {/* Other Restaurants Section */}
       <RestaurantsListing
-        title="Explore Our Other Locations"
+        title="Explore Our Other Venues"
         excludeCurrent
       />
-
     </div>
   );
 };

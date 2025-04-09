@@ -25,7 +25,7 @@ const Hero = () => {
           <p className="text-xl md:text-2xl uppercase tracking-[0.2em]"></p>
           <button 
            onClick={scrollToRestaurants}
-            className="mt-9 px-12 py-6 text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300 transform hover:scale-105 focus:outline-none"
+            className="mt-9 px-12 py-6 rounded-md text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300 transform hover:scale-105 focus:outline-none"
           >
             Reserve
           </button>

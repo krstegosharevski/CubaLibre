@@ -29,7 +29,7 @@ const RestaurantCard = ({ name, description, image, path }: RestaurantCardProps)
       <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
         <h3 className="text-2xl font-serif mb-2">{name}</h3>
         <p className="text-sm mb-4 opacity-90 line-clamp-2">{description}</p>
-        <button className="w-fit border-2 border-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-colors duration-300">
+        <button className="w-fit rounded-lg border-2 border-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-colors duration-300">
           Discover More
         </button>
       </div>

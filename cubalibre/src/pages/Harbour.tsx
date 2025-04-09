@@ -39,7 +39,7 @@ const Harbour = () => {
                 >
                     <div className="text-white max-w-4xl">
                         <h1 className="text-5xl md:text-7xl font-serif mb-6">The HarbouR Club</h1>
-                        <button className="px-8 py-7 mt-3 text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300">
+                        <button className="px-8 py-7 mt-3 rounded-md text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300">
                             Make a Reservation
                         </button>
                     </div>

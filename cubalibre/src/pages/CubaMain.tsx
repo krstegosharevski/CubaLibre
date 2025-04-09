@@ -35,7 +35,7 @@ const CubaMain = () => {
         >
           <div className="text-white max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-serif mb-6">Cuba Libre Beach & Bar</h1>
-            <button className="px-8 py-7 mt-3 text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300">
+            <button className="px-8 py-7 mt-3 rounded-md text-white bg-transparent border-2 border-white hover:bg-white hover:text-black transition duration-300">
               Make a Reservation
             </button>
           </div>
@@ -242,62 +242,62 @@ const CubaMain = () => {
         </motion.div>
       </div>
 
-      {/* Opening Hours & Location Section */}
+ 
+
       <div className="w-full bg-black py-16 px-4">
-        <div className="max-w-4xl mx-auto bg-white rounded-lg overflow-hidden shadow-xl">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* Opening Hours */}
-            <div className="p-10">
-              <div className="flex items-center mb-8">
-                <Clock className="w-6 h-6 mr-3" />
-                <h2 className="text-3xl font-serif text-black">Opening Hours</h2>
-              </div>
-              <div className="space-y-4 text-black mt-3">
-                {[
-                  { day: "Monday", hours: "09:00 - 01:00" },
-                  { day: "Tuesday", hours: "09:00 - 01:00" },
-                  { day: "Wednesday", hours: "09:00 - 01:00" },
-                  { day: "Thursday", hours: "09:00 - 01:00" },
-                  { day: "Friday", hours: "09:00 - 02:00" },
-                  { day: "Saturday", hours: "09:00 - 02:00" },
-                  { day: "Sunday", hours: "09:00 - 01:00" }
-                ].map((item, index) => (
-                  <div key={index} className="flex justify-between border-b border-gray-200 pb-3">
-                    <span className="font-medium italic">{item.day}</span>
-                    <span className="italic">{item.hours}</span>
+              <div className="container mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Opening Hours */}
+                  <div className="p-10 bg-black shadow-lg rounded-lg">
+                    <div className="flex items-center mb-8">
+                      <Clock className="w-8 h-8 mr-3 text-white" />
+                      <h2 className="text-3xl font-serif text-white shadow-lg">Opening Hours</h2>
+                    </div>
+                    <div className="space-y-4 text-white mt-3">
+                      {[
+                        { day: "Monday", hours: "09:00 - 01:00" },
+                        { day: "Tuesday", hours: "09:00 - 01:00" },
+                        { day: "Wednesday", hours: "09:00 - 01:00" },
+                        { day: "Thursday", hours: "09:00 - 01:00" },
+                        { day: "Friday", hours: "09:00 - 02:00" },
+                        { day: "Saturday", hours: "09:00 - 02:00" },
+                        { day: "Sunday", hours: "09:00 - 01:00" }
+                      ].map((item, index) => (
+                        <div key={index} className="flex justify-between border-b border-gray-700 pb-3">
+                          <span className="font-medium italic">{item.day}</span>
+                          <span className="italic">{item.hours}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                ))}
+      
+                  {/* Google Map with Skew Effect */}
+                  <motion.div
+                    className="bg-black shadow-lg rounded-lg p-10 relative"
+                    initial={{ skewX: -6 }}
+                    whileInView={{ skewX: 0 }}
+                    viewport={{ once: false }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 20
+                    }}
+                  >
+                    <div className="h-full w-full rounded-lg overflow-hidden relative" style={{ minHeight: '400px' }}>
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.359046069581!2d20.8032905!3d41.1009742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350dcaa42cfea41%3A0x3769611e40472486!2sCuba%20Libre%20Beach%20%26%20Bar!5e0!3m2!1sen!2smk!4v1710000000000!5m2!1sen!2smk"
+                        width="100%"
+                        height="100%"
+                        style={{ minHeight: '400px' }}
+                        allowFullScreen
+                        loading="lazy"
+                        className="bg-white"
+                      />
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             </div>
-
-            {/* Google Map with Skew Effect */}
-            <motion.div
-              className="h-full w-full bg-white p-10 relative"
-              initial={{ skewX: -6 }}
-              whileInView={{ skewX: 0 }}
-              viewport={{ once: false }}
-              transition={{
-                type: "spring",
-                stiffness: 100,
-                damping: 20
-              }}
-            >
-              <div className="h-full w-full border-4 border-white rounded-lg overflow-hidden relative">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.359046069581!2d20.8032905!3d41.1009742!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1350dcaa42cfea41%3A0x3769611e40472486!2sCuba%20Libre%20Beach%20%26%20Bar!5e0!3m2!1sen!2smk!4v1710000000000!5m2!1sen!2smk"
-                  width="100%"
-                  height="100%"
-                  style={{ minHeight: '400px' }}
-                  allowFullScreen
-                  loading="lazy"
-                  className="bg-white opacity-90"
-                />
-                <div className="absolute inset-0 bg-white bg-opacity-20 pointer-events-none"></div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </div>
 
 
       <div className="bg-black py-8 px-4">
