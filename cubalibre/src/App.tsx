@@ -6,6 +6,7 @@ import Harbour from './pages/Harbour';
 import CubaDrim from './pages/CubaDrim';
 import { useEffect } from 'react';
 import Menu from './pages/Menu';
+import ScrollToTop from './components/layout/ScrollToTop';
 
 function App() {
   //implement
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
     <div className="w-full min-h-screen">
       <Routes>
         <Route path="/" element={<Home />} />
