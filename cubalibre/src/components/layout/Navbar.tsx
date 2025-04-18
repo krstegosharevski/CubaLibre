@@ -59,9 +59,9 @@ const Navbar = () => {
               </div>
             </div>
             
-            <a href="#menu" className="text-white hover:text-gold-300 transition uppercase tracking-widest text-sm">Menu</a>
-            <a href="#jobs" className="text-white hover:text-gold-300 transition uppercase tracking-widest text-sm">Collections</a>
-            <a href="#collections" className="text-white hover:text-gold-300 transition uppercase tracking-widest text-sm">Jobs</a>
+            <Link to="/menu" className="text-white hover:text-gold-300 transition uppercase tracking-widest text-sm">Menu</Link>
+            <a href="#jobs" className="text-white hover:text-gold-300 transition uppercase tracking-widest text-sm">Gallery</a>
+            {/* <a href="#collections" className="text-white hover:text-gold-300 transition uppercase tracking-widest text-sm">Jobs</a> */}
           </div>
           <button className="md:hidden text-white">
             <Menu size={24} />

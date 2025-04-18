@@ -5,6 +5,7 @@ import CubaMain from './pages/CubaMain';
 import Harbour from './pages/Harbour';
 import CubaDrim from './pages/CubaDrim';
 import { useEffect } from 'react';
+import Menu from './pages/Menu';
 
 function App() {
   //implement
@@ -20,6 +21,7 @@ function App() {
         <Route path="/cubamain" element={<CubaMain />} />
         <Route path="/harbour" element={<Harbour />} />
         <Route path="/cubadrim" element={<CubaDrim />} />
+        <Route path="/menu" element={<Menu />}/>
       </Routes>
     </div>
   </Router>

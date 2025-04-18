@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h3 className="text-2xl font-serif mb-4">Dress Code</h3>
             <p className="italic text-gray-300 mb-3">Smart elegant attire preferred</p>
-            <ul className="space-y-2 text-gray-300">
+            <ul className="space-y-2 text-gray-300 italic">
               <li>Collared shirts recommended</li>
               <li>Elegant dresses/smart casual</li>
             </ul>
@@ -46,7 +46,7 @@ const Footer = () => {
 
         {/* Copyright - Секогаш центрирано */}
         <div className="pt-6 text-center text-gray-400 text-sm">
-          <p>© {new Date().getFullYear()} Cuba Libre Beach & Bar. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Cuba Libre. All rights reserved.</p>
         </div>
       </div>
     </footer>
